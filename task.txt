@@ -1,0 +1,15 @@
+From an employee array , find and return employees whose salary is greater than 10000
+Employee {
+
+id: int
+name : String
+salary: double
+
+}
+
+EmployeeService{
+
+  Employee[] findEmployessWithSalaryGreaterThan(double checkSalary)
+
+
+}
