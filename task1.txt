@@ -1,4 +1,4 @@
-From an employee array , find and return employees whose salary is greater than 10000
+From an employee ArrayList , find and return employees whose salary is greater than 10000
 Employee {
 
 id: int
@@ -9,7 +9,7 @@ salary: double
 
 EmployeeService{
 
-  Employee[] findEmployessWithSalaryGreaterThan(double checkSalary)
+  List<Employee> findEmployessWithSalaryGreaterThan(List<Employee>input, double checkSalary)
 
 
 }
