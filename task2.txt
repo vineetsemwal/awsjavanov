@@ -1,0 +1,27 @@
+
+Employee{
+
+ username: String
+ 
+ age: int
+
+ department:String
+
+getters+setters
+}
+
+
+EmployeeService{
+
+  Map<String,Employee>store=new HashMap<>()
+
+  void add(Employee employee)
+
+ Employee findByUserName(String username) throws EmployeeNotFoundException;
+
+ List<Employee> findByDepartment(Sring dept)
+
+ List<Employee>findAllEmployeesInAscendingOrderByAge()
+
+}
+
