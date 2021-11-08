@@ -6,7 +6,7 @@ public class Problem3 {
 }
 
 
-class Employee {
+class Employee implements Comparable<Employee>{
     private String name;
     private int salary;
 
@@ -29,6 +29,11 @@ class Employee {
 
     public void setSalary(int salary) {
         this.salary = salary;
+    }
+
+    @Override
+    public int compareTo(Employee employee) {
+        return this.salary- employee.salary;
     }
 }
 
