@@ -9,8 +9,8 @@ public class AlphabetStartCheck {
 
     /**
      *  check first character is an alphabet between a-z  or A-Z
-     * @param name
-     * @return
+     * @param name : input string
+     * @return true if it is character elese false
      */
    public boolean checkNameStartsWithAlphabet(String name){
         name=name.toLowerCase();
