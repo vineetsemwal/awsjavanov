@@ -28,11 +28,22 @@
       <version>5.6.1.Final</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+
+    <!--
     <dependency>
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
       <version>42.3.1</version>
     </dependency>
+-->
+    <!-- https://mvnrepository.com/artifact/org.hsqldb/hsqldb -->
+    <dependency>
+      <groupId>org.hsqldb</groupId>
+      <artifactId>hsqldb</artifactId>
+      <version>2.6.1</version>
+    </dependency>
+
+
 
   </dependencies>
 
