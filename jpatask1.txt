@@ -1,0 +1,21 @@
+Product{
+id: Long
+
+productName: String
+
+prie: double
+
+}
+
+
+ProductService{
+
+ Product addProduct(String name, double price)
+ 
+ Product changePrice(Long id , double newPrice)
+ 
+ Product findById(Long id)
+  
+  
+  }
+
