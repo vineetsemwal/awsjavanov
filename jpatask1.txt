@@ -1,12 +1,20 @@
+
+
+groupid : com.trainingapps
+artifactid : productapp
+
+
+com.trainingapps.productapp.entities
 Product{
 id: Long
 
 productName: String
 
-prie: double
+price: double
 
 }
 
+com.trainingapps.productapp.services
 
 ProductService{
 
