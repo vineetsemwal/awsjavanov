@@ -1,0 +1,47 @@
+
+
+groupid :   org.trainingapps
+
+artifactid: empms
+
+
+Employee{
+
+id: long
+
+ username: String
+ 
+ age: int
+
+ salary: double
+
+getters+setters
+
+}
+
+IEmployeeDao{
+
+Employee save(Employee employee)
+
+Employee findById(long id) 
+ 
+List<Employee> findAll() 
+
+Employee findByUserName(String username) 
+
+
+}
+
+IEmployeeService{
+ 
+  Employee add(String username, int age, double salary)
+
+ Employee incrementSalary(long empId, double amountToBeAdded)
+ 
+Employee findById(long id) throws EmployeeNotFoundException
+
+Employee findByUserName(String username) throws EmployeeNotFoundException
+
+List<Employee> findAll() 
+}
+
