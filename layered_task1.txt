@@ -43,5 +43,31 @@ Employee findById(long id) throws EmployeeNotFoundException
 Employee findByUserName(String username) throws EmployeeNotFoundException
 
 List<Employee> findAll() 
+
+
+  Steps to complete project
+
+step 1) check project is created successfully and getting built
+
+step 2) Add Employee (Manually test it is working properly in the frontend by printing output)
+
+step 3) find by id (Manually test it is working properly in the frontend by printing output)
+
+step 4) find by username (Manually test it is working properly in the frontend by printing output)
+
+step 5) Find all employees (Manually test it is working properly in the frontend by printing output)
+
+step 6) increment salary of the employee  (Manually test it is working properly in the frontend by printing output)
+
+
+
+
+
+
+
+
+
+
+
 }
 
