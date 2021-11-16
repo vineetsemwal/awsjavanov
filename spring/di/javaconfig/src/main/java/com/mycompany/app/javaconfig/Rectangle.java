@@ -3,6 +3,8 @@ package com.mycompany.app.javaconfig;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+
 
 public class Rectangle implements IShape{
 
@@ -21,6 +23,12 @@ public class Rectangle implements IShape{
         this.breadth=breadth;
         System.out.println("in rectangle constructor, length="+this.length+" breadth="+this.breadth);
     }
+
+    @PostConstruct
+    public void afterInit(){
+        System.out.println("inside  Rectangle's afterinit, length="+length+" breadth="+breadth);
+    }
+
 
     public double getLength() {
         return length;
