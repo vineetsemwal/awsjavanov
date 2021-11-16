@@ -1,12 +1,14 @@
 package com.mycompany.app.javaconfig;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-
+@Scope("prototype")
+@Component
 public class Rectangle implements IShape{
 
     @Value("${rect.length}")

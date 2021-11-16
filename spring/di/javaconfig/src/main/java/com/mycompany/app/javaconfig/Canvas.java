@@ -17,6 +17,9 @@ public class Canvas {
         this.shape = shape;
     }
 
+    public IShape getShape(){
+        return shape;
+    }
 
     public void drawArea(){
        double area= shape.area();

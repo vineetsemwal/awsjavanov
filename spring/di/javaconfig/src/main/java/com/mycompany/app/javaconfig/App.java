@@ -12,8 +12,11 @@ public class App {
         Canvas canvas=context.getBean(Canvas.class);
         System.out.println("using canvas to draw shape");
         canvas.drawArea();
-        IShape shape=context.getBean(IShape.class);
-        System.out.println("shape="+shape + "area="+shape.area());
+        IShape shape1=context.getBean(IShape.class);
+        System.out.println("shape="+shape1 + "area="+shape1.area());
+        Rectangle rect=context.getBean(Rectangle.class);
+        boolean isShapeSame=shape1==rect;
+        System.out.println("same rectangle object?="+isShapeSame);
         context.close();
         System.out.println("bye");
     }
