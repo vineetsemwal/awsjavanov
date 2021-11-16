@@ -1,6 +1,9 @@
 package com.mycompany.app.javaconfig;
 
-public class Rectangle {
+import org.springframework.stereotype.Component;
+
+@Component
+public class Rectangle implements IShape{
 
     private double length;
 
@@ -31,6 +34,7 @@ public class Rectangle {
         this.breadth = breadth;
     }
 
+    @Override
     public double area(){
         return length*breadth;
     }
