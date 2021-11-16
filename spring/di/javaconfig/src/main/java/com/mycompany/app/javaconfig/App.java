@@ -10,8 +10,9 @@ public class App {
         Canvas canvas=context.getBean(Canvas.class);
         System.out.println("using canvas to draw shape");
         canvas.drawArea();
-        Rectangle shape=context.getBean(Rectangle.class);
-        System.out.println("shape="+shape +" length="+shape.getLength()+" breadth="+shape.getBreadth());
+        IShape shape=context.getBean(IShape.class);
+        System.out.println("shape="+shape + "area="+shape.area());
+
     }
 
 }

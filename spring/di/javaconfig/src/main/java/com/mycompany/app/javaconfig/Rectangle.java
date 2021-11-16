@@ -2,7 +2,6 @@ package com.mycompany.app.javaconfig;
 
 import org.springframework.stereotype.Component;
 
-@Component
 public class Rectangle implements IShape{
 
     private double length;
