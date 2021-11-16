@@ -9,7 +9,7 @@ public class App {
     public static void main(String[] args){
         AbstractApplicationContext context=new AnnotationConfigApplicationContext(JavaConfiguration.class);
 
-        Canvas canvas=context.getBean(Canvas.class);
+        Canvas canvas=context.getBean("canvas",Canvas.class);
         System.out.println("using canvas to draw shape");
         canvas.drawArea();
         IShape shape1=context.getBean(IShape.class);

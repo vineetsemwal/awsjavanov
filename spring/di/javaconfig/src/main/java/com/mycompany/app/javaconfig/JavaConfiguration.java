@@ -8,13 +8,15 @@ import org.springframework.context.annotation.*;
 @Configuration
 public class JavaConfiguration {
 
-/*
+
+
+   // @Scope("prototype")
     @Bean
     public Rectangle rectangle(){
         Rectangle rect=new Rectangle(3,4);
         return rect;
     }
-    */
+
 
 
 }
