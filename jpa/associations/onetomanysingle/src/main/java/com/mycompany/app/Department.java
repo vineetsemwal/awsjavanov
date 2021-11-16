@@ -1,6 +1,8 @@
 package com.mycompany.app;
 
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.Objects;
 import java.util.Set;
@@ -16,7 +18,8 @@ public class Department {
 
     private String deptName;
 
-    @OneToMany
+
+    //@OneToMany(cascade=CascadeType.ALL)
     private Set<Employee> employees;
 
     public Set<Employee> getEmployees() {
