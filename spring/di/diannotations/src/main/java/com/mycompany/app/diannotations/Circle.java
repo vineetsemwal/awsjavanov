@@ -1,4 +1,4 @@
-package com.mycompany.app.javaconfigxml;
+package com.mycompany.app.diannotations;
 
 //@Component
 public class Circle implements IShape{

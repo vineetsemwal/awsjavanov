@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
-  <artifactId>javaconfigxml</artifactId>
+  <artifactId>dixml</artifactId>
   <version>1.0</version>
 
-  <name>javaconfigxml</name>
+  <name>dixml</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 

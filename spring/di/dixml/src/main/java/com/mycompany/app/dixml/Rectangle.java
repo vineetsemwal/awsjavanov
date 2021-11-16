@@ -1,9 +1,4 @@
-package com.mycompany.app.javaconfigxml;
-
-import org.springframework.beans.factory.annotation.Value;
-
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
+package com.mycompany.app.dixml;
 
 
 public class Rectangle implements IShape{

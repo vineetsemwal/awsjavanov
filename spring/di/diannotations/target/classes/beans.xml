@@ -6,14 +6,10 @@
         http://www.springframework.org/schema/context
          http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="rectangle" class="com.mycompany.app.javaconfigxml.Rectangle">
-       <property name="length" value="5"/>
-        <property name="breadth" value="6"/>
+    <context:component-scan base-package="com.mycompany.app.diannotations" />
 
-    </bean>
-
-    <bean id="canvas" class="com.mycompany.app.javaconfigxml.Canvas">
-        <property name="shape" ref="rectangle"/>
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:app.properties"></property>
     </bean>
 
 </beans>
