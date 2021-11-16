@@ -1,11 +1,15 @@
 package com.mycompany.app.javaconfig;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+
 
 public class Rectangle implements IShape{
 
+    @Value("${rect.length}")
     private double length;
 
+    @Value("${rect.breadth}")
     private double breadth;
 
     public Rectangle(){
@@ -15,6 +19,7 @@ public class Rectangle implements IShape{
     public Rectangle(double length, double breadth){
         this.length = length;
         this.breadth=breadth;
+        System.out.println("in rectangle constructor, length="+this.length+" breadth="+this.breadth);
     }
 
     public double getLength() {
