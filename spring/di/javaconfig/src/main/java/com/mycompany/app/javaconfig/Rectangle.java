@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 
 public class Rectangle implements IShape{
@@ -22,11 +23,6 @@ public class Rectangle implements IShape{
         this.length = length;
         this.breadth=breadth;
         System.out.println("in rectangle constructor, length="+this.length+" breadth="+this.breadth);
-    }
-
-    @PostConstruct
-    public void afterInit(){
-        System.out.println("inside  Rectangle's afterinit, length="+length+" breadth="+breadth);
     }
 
 
@@ -50,6 +46,17 @@ public class Rectangle implements IShape{
     public double area(){
         return length*breadth;
     }
+
+    @PostConstruct
+    public void afterInit(){
+        System.out.println("inside  Rectangle's afterinit, length="+length+" breadth="+breadth);
+    }
+
+    @PreDestroy
+    public void beforeDestroy(){
+        System.out.println("inside Reactangle's  before destroy");
+    }
+
 
 
 }
