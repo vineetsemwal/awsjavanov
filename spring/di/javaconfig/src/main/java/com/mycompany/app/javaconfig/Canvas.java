@@ -10,9 +10,9 @@ import javax.annotation.PreDestroy;
 @Component
 public class Canvas {
 
+    @Autowired
     private IShape shape;
 
-    @Autowired
     public void setShape(IShape shape){
         this.shape = shape;
     }

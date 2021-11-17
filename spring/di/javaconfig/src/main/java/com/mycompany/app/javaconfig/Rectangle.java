@@ -1,5 +1,6 @@
 package com.mycompany.app.javaconfig;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -8,7 +9,8 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 
-public class Rectangle implements IShape{
+public class Rectangle implements IShape {
+
 
     @Value("${rect.length}")
     private double length;
@@ -16,14 +18,15 @@ public class Rectangle implements IShape{
     @Value("${rect.breadth}")
     private double breadth;
 
-    public Rectangle(){
+    @Autowired
+    private Canvas canvas;
 
-    }
 
-    public Rectangle(double length, double breadth){
+
+    public Rectangle(double length, double breadth) {
         this.length = length;
-        this.breadth=breadth;
-        System.out.println("in rectangle constructor, length="+this.length+" breadth="+this.breadth);
+        this.breadth = breadth;
+        System.out.println("in rectangle constructor, length=" + this.length + " breadth=" + this.breadth);
     }
 
 
@@ -44,20 +47,19 @@ public class Rectangle implements IShape{
     }
 
     @Override
-    public double area(){
-        return length*breadth;
+    public double area() {
+        return length * breadth;
     }
 
     @PostConstruct
-    public void afterInit(){
-        System.out.println("inside  Rectangle's afterinit, length="+length+" breadth="+breadth);
+    public void afterInit() {
+        System.out.println("inside  Rectangle's afterinit, length=" + length + " breadth=" + breadth);
     }
 
     @PreDestroy
-    public void beforeDestroy(){
+    public void beforeDestroy() {
         System.out.println("inside Reactangle's  before destroy");
     }
-
 
 
 }

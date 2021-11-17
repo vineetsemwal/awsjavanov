@@ -15,10 +15,8 @@ public class AlphabetStartCheck {
    public boolean checkNameStartsWithAlphabet(String name){
         name=name.toLowerCase();
         char ch=name.charAt(0);
-        if(ch>='a' && ch<='z'){
-         return true;
-        }
-        return false;
+        boolean check=ch>='a' && ch<='z';
+        return check;
     }
 
 }
