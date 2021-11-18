@@ -28,6 +28,7 @@ public class StringExample1 {
         System.out.println("salary start ="+salaryStrInLac);
         String salStr = salaryStrInLac.substring(0, salaryStrInLac.length() - 1);
         double salary = Double.parseDouble(salStr);
+
         Employee employee = new Employee();
         employee.setFirstName(firstName);
         employee.setLastName(lastName);
