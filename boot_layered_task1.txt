@@ -1,0 +1,58 @@
+
+
+groupid :   com.trainingapps
+
+artifactid: customerms
+
+Use hashmap as storage
+
+Customer{
+
+id: String //length is 10
+
+ username: String
+ 
+ age: int
+
+getters+setters
+
+}
+
+ICustomerDao{
+
+Customer save(Customer customer)
+
+Customer findById(String id) 
+
+Customer findByUsername(String usrname)
+ 
+
+}
+
+ICustomerService{
+ 
+ Customer add(String username, int age)
+
+Customer findById(String id) throws CustomerNotFoundException
+
+Customer findByUsername(String usrname) throws CustomerNotFoundException
+
+
+
+  Steps to complete project
+
+step 1) check project is created successfully and getting built
+
+step 2) Add Customer (Manually test it is working properly in the frontend by printing output)
+
+step 3) find by id (Manually test it is working properly in the frontend by printing output)
+
+step 4) find by username (Manually test it is working properly in the frontend by printing output)
+
+
+
+
+
+
+}
+
