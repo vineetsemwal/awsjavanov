@@ -22,7 +22,7 @@ public class PanagramCheck {
         int size= set.size();
         boolean check=size==26;
         return check;
-    } 
+    }
 
 
 }
