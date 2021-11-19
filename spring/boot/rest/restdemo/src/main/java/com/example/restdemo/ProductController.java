@@ -1,10 +1,11 @@
 package com.example.restdemo;
 
+import com.example.restdemo.dto.AddProductRequest;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
-@RestController
+//@RestController
 public class ProductController {
 
     private Map<Integer, Product> store = new HashMap<>();
