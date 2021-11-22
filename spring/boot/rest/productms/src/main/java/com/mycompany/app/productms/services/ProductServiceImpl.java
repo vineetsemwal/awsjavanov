@@ -2,11 +2,15 @@ package com.mycompany.app.productms.services;
 
 import com.mycompany.app.productms.daos.IProductDao;
 import com.mycompany.app.productms.daos.ProductDaoImpl;
+import com.mycompany.app.productms.dtos.AddProductRequest;
+import com.mycompany.app.productms.dtos.ProductDetails;
+import com.mycompany.app.productms.dtos.UpdateProductRequest;
 import com.mycompany.app.productms.entities.Product;
 import com.mycompany.app.productms.exceptions.InvalidProductIdException;
 import com.mycompany.app.productms.exceptions.InvalidProductNameException;
 import com.mycompany.app.productms.exceptions.InvalidProductPriceException;
 import com.mycompany.app.productms.exceptions.ProductNotFoundException;
+import com.mycompany.app.productms.util.ProductUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -21,28 +25,43 @@ public class ProductServiceImpl implements IProductService {
     @Autowired
     private IProductDao dao ;
 
+    @Autowired
+    private ProductUtil productUtil;
+
     @Override
-    public Product addProduct(String name, double price) {
+    public ProductDetails addProduct(AddProductRequest requestData) {
+        String name = requestData.getName();
+        double price = requestData.getPrice();
         validateProductName(name);
         validatePrice(price);
         Product product = new Product();
         product.setName(name);
         product.setPrice(price);
         product=dao.save(product);
-        return product;
+        ProductDetails desired = productUtil.convert(product);
+        return desired;
     }
 
     @Override
-    public Product changePrice(long id, double newPrice) {
+    public ProductDetails changePrice(UpdateProductRequest requestData) {
+        long id = requestData.getId();
+        double newPrice = requestData.getNewPrice();
         validateId(id);
         validatePrice(newPrice);
         Product product = findById(id);
         product.setPrice(newPrice);
-        dao.save(product);
-        return product;
+        product=dao.save(product);
+        ProductDetails desired=productUtil.convert(product);
+        return desired;
     }
 
     @Override
+    public ProductDetails findProductDetailsById(long id) {
+        Product product = findById(id);
+        ProductDetails desired=productUtil.convert(product);
+        return desired;
+    }
+
     public Product findById(long id) {
        validateId(id);
         Product product = dao.findById(id);

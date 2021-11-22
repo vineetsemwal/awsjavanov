@@ -30,9 +30,8 @@ public class ProductControllerImproved {
      */
     @GetMapping("/products/byid/{id}")
     public ProductDetails getProductById(@PathVariable("id") long productId) {
-        Product product = service.findById(productId);
-        ProductDetails response = productUtil.convert(product);
-        return response;
+        ProductDetails response = service.findProductDetailsById(productId);
+         return response;
 
     }
 
@@ -48,19 +47,13 @@ public class ProductControllerImproved {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/products/add")
     public ProductDetails add(@RequestBody AddProductRequest requestData) {
-        String name = requestData.getName();
-        double price = requestData.getPrice();
-        Product product = service.addProduct(name, price);
-        ProductDetails desired = productUtil.convert(product);
-        return desired;
+        ProductDetails response = service.addProduct(requestData);
+        return response;
     }
 
     @PutMapping("/products/price/change")
     public ProductDetails changePrice(@RequestBody UpdateProductRequest requestData) {
-        long id = requestData.getId();
-        double newPrice = requestData.getNewPrice();
-        Product product = service.changePrice(id, newPrice);
-        ProductDetails response = productUtil.convert(product);
+        ProductDetails response= service.changePrice(requestData);
         return response;
     }
 

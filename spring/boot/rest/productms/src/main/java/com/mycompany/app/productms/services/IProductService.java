@@ -1,15 +1,18 @@
 package com.mycompany.app.productms.services;
 
+import com.mycompany.app.productms.dtos.AddProductRequest;
+import com.mycompany.app.productms.dtos.ProductDetails;
+import com.mycompany.app.productms.dtos.UpdateProductRequest;
 import com.mycompany.app.productms.entities.Product;
 
 import java.util.List;
 
 public interface IProductService {
-    Product addProduct(String name, double price);
+    ProductDetails addProduct(AddProductRequest requestData);
 
-    Product changePrice(long id, double newPrice);
+    ProductDetails changePrice(UpdateProductRequest requestData);
 
-    Product findById(long id) ;
+    ProductDetails findProductDetailsById(long id);
 
     List<Product> findAll();
 
