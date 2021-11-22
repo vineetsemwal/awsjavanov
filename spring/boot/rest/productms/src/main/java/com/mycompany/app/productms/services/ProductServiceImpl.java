@@ -6,6 +6,7 @@ import com.mycompany.app.productms.entities.Product;
 import com.mycompany.app.productms.exceptions.InvalidProductIdException;
 import com.mycompany.app.productms.exceptions.InvalidProductNameException;
 import com.mycompany.app.productms.exceptions.InvalidProductPriceException;
+import com.mycompany.app.productms.exceptions.ProductNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -45,6 +46,9 @@ public class ProductServiceImpl implements IProductService {
     public Product findById(long id) {
        validateId(id);
         Product product = dao.findById(id);
+        if(product==null){
+            throw new ProductNotFoundException("product not found");
+        }
         return product;
     }
 

@@ -9,7 +9,7 @@ public interface IProductService {
 
     Product changePrice(long id, double newPrice);
 
-    Product findById(long id);
+    Product findById(long id) ;
 
     List<Product> findAll();
 

@@ -4,13 +4,16 @@ import com.mycompany.app.productms.dtos.AddProductRequest;
 import com.mycompany.app.productms.dtos.ProductDetails;
 import com.mycompany.app.productms.dtos.UpdateProductRequest;
 import com.mycompany.app.productms.entities.Product;
+import com.mycompany.app.productms.exceptions.InvalidProductIdException;
+import com.mycompany.app.productms.exceptions.InvalidProductNameException;
+import com.mycompany.app.productms.exceptions.InvalidProductPriceException;
+import com.mycompany.app.productms.exceptions.ProductNotFoundException;
 import com.mycompany.app.productms.services.IProductService;
 import com.mycompany.app.productms.util.ProductUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.Map;
 
 @RestController
 public class ProductControllerImproved {
@@ -30,6 +33,7 @@ public class ProductControllerImproved {
         Product product = service.findById(productId);
         ProductDetails response = productUtil.convert(product);
         return response;
+
     }
 
     /*
@@ -41,6 +45,7 @@ public class ProductControllerImproved {
             return list;
         }
     */
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/products/add")
     public ProductDetails add(@RequestBody AddProductRequest requestData) {
         String name = requestData.getName();
