@@ -3,18 +3,18 @@ package com.mycompany.app.productms.controllers;
 import com.mycompany.app.productms.dtos.AddProductRequest;
 import com.mycompany.app.productms.dtos.ProductDetails;
 import com.mycompany.app.productms.dtos.UpdateProductRequest;
-import com.mycompany.app.productms.entities.Product;
-import com.mycompany.app.productms.exceptions.InvalidProductIdException;
-import com.mycompany.app.productms.exceptions.InvalidProductNameException;
-import com.mycompany.app.productms.exceptions.InvalidProductPriceException;
-import com.mycompany.app.productms.exceptions.ProductNotFoundException;
 import com.mycompany.app.productms.services.IProductService;
 import com.mycompany.app.productms.util.ProductUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
+@Validated
 @RestController
 public class ProductControllerImproved {
 
@@ -29,7 +29,7 @@ public class ProductControllerImproved {
 
      */
     @GetMapping("/products/byid/{id}")
-    public ProductDetails getProductById(@PathVariable("id") long productId) {
+    public ProductDetails getProductById(@PathVariable("id")long productId) {
         ProductDetails response = service.findProductDetailsById(productId);
          return response;
 
@@ -46,13 +46,13 @@ public class ProductControllerImproved {
     */
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/products/add")
-    public ProductDetails add(@RequestBody AddProductRequest requestData) {
+    public ProductDetails add(@RequestBody  AddProductRequest requestData) {
         ProductDetails response = service.addProduct(requestData);
         return response;
     }
 
     @PutMapping("/products/price/change")
-    public ProductDetails changePrice(@RequestBody UpdateProductRequest requestData) {
+    public ProductDetails changePrice(@RequestBody  UpdateProductRequest requestData) {
         ProductDetails response= service.changePrice(requestData);
         return response;
     }

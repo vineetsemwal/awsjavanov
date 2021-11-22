@@ -32,8 +32,6 @@ public class ProductServiceImpl implements IProductService {
     public ProductDetails addProduct(AddProductRequest requestData) {
         String name = requestData.getName();
         double price = requestData.getPrice();
-        validateProductName(name);
-        validatePrice(price);
         Product product = new Product();
         product.setName(name);
         product.setPrice(price);
@@ -46,9 +44,7 @@ public class ProductServiceImpl implements IProductService {
     public ProductDetails changePrice(UpdateProductRequest requestData) {
         long id = requestData.getId();
         double newPrice = requestData.getNewPrice();
-        validateId(id);
-        validatePrice(newPrice);
-        Product product = findById(id);
+         Product product = findById(id);
         product.setPrice(newPrice);
         product=dao.save(product);
         ProductDetails desired=productUtil.convert(product);
@@ -63,7 +59,6 @@ public class ProductServiceImpl implements IProductService {
     }
 
     public Product findById(long id) {
-       validateId(id);
         Product product = dao.findById(id);
         if(product==null){
             throw new ProductNotFoundException("product not found");
@@ -84,22 +79,5 @@ public class ProductServiceImpl implements IProductService {
         return list;
     }
 
-    void validatePrice(double price){
-        if (price < 0) {
-            throw new InvalidProductPriceException("price is invalid");
-        }
 
-    }
-
-    void validateProductName(String name){
-        if (name == null || name.isEmpty()) {
-            throw new InvalidProductNameException("name is invalid");
-        }
-    }
-
-    void validateId(long id){
-        if (id <= 0) {
-            throw new InvalidProductIdException("id is invalid");
-        }
-    }
 }

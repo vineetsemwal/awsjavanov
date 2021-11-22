@@ -1,8 +1,12 @@
 package com.mycompany.app.productms.dtos;
 
+import javax.validation.constraints.Min;
+
 public class UpdateProductRequest {
-   private long id;
-    private  double newPrice;
+    @Min(1)
+    private long id;
+    @Min(1)
+    private double newPrice;
 
     public long getId() {
         return id;
