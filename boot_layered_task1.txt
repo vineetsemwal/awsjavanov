@@ -18,25 +18,23 @@ getters+setters
 
 }
 
+/*
+extend with JpaRepository and add methods required for doing the operations
+*/
 ICustomerDao{
 
-Customer save(Customer customer)
-
-Customer findById(String id) 
-
-Customer findByUsername(String usrname)
- 
 
 }
 
 ICustomerService{
  
- Customer add(String username, int age)
+ CustomerDetails add(AddCustomerRequest request)
 
-Customer findById(String id) throws CustomerNotFoundException
+CustomerDetails findById(String id) throws CustomerNotFoundException
 
-Customer findByUsername(String usrname) throws CustomerNotFoundException
+CustomerDetails findByUsername(String usrname) throws CustomerNotFoundException
 
+List<CustomerDetails> findAllCustomers();
 
 
   Steps to complete project
