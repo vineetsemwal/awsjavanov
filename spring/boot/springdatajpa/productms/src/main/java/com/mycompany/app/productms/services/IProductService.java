@@ -27,5 +27,5 @@ public interface IProductService {
 
     List<ProductDetails> findProductsGreaterThanPrice(@Min(1)double checkPrice);
 
-    Product findProductByName(String name);
+    ProductDetails findProductByName(String name);
 }

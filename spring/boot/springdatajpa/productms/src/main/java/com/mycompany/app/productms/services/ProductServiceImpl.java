@@ -81,13 +81,14 @@ public class ProductServiceImpl implements IProductService {
 
 
     @Override
-    public Product findProductByName(String name) {
+    public ProductDetails findProductByName(String name) {
         boolean exists=dao.existsByName(name);
         if(!exists){
             throw new ProductNotFoundException("product not found");
         }
        Product product= dao.findProductByName(name);
-       return product;
+       ProductDetails desired=productUtil.convert(product);
+       return desired;
     }
 
     @Override
