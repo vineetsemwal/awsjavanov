@@ -7,6 +7,7 @@ import com.mycompany.app.productms.services.IProductService;
 import com.mycompany.app.productms.util.ProductUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,8 +35,17 @@ public class ProductControllerImproved {
     public ProductDetails getProductById(@PathVariable("id")long productId) {
         ProductDetails response = service.findProductDetailsById(productId);
          return response;
-
     }
+
+    /*
+    @GetMapping("/byid2/{id}")
+    public ResponseEntity<ProductDetails> getProductById2(@PathVariable("id")long productId) {
+        ProductDetails products = service.findProductDetailsById(productId);
+        ResponseEntity<ProductDetails>response=new ResponseEntity<>(products,HttpStatus.OK);
+        return response;
+    }
+    */
+
 
     /*
         @GetMapping("/products/all")
