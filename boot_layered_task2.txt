@@ -23,7 +23,7 @@ getters+setters
 /*
 extend with JpaRepository and add methods required for doing the operations
 */
-IStudentDao{
+IStudentRepository{
 
 
 }
@@ -34,8 +34,8 @@ IStudentService{
 
 StudentDetails findById(long id) throws StudentNotFoundException
 
-StudentDetails findByFullName(String firstName, String lastName) throws StudentFoundException
-
+List<StudentDetails> findByFullName(String firstName, String lastName) throws StudentFoundException
+}
 
 
 
@@ -43,12 +43,12 @@ StudentDetails findByFullName(String firstName, String lastName) throws StudentF
 
 step 1) check project is created successfully and getting built
 
-step 2) Add Student (Manually test it is working properly in the frontend by printing output)
+step 2) Add Student (Manually test it is working properly in the frontend by printing output) and after that open endpoint
 
-step 3) find by id (Manually test it is working properly in the frontend by printing output)
+step 3) find by id (Manually test it is working properly in the frontend by printing output) and after that open endpoint
 
-step 4) find by full name (Manually test it is working properly in the frontend by printing output)
+step 4) find by full name (Manually test it is working properly in the frontend by printing output) and after that open endpoint
 
 
-}
+
 
