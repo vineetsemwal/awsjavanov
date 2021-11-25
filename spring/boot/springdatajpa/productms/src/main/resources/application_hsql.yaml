@@ -1,0 +1,25 @@
+server:
+     port: 8585
+
+#---------------
+# HSQL data source
+#--------------
+spring:
+     datasource:
+             driver-class-name: org.hsqldb.jdbcDriver
+             url: jdbc:hsqldb:mem:training
+             username: tom
+             password: jerry
+
+#-------------
+#jpa HSQL
+#----------------
+
+     jpa:
+        hibernate:
+               ddl-auto: create
+
+        properties:
+                  hibernate:
+                         dialect: org.hibernate.dialect.HSQLDialect
+

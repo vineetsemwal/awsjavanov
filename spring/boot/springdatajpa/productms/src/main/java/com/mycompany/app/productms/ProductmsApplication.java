@@ -1,5 +1,7 @@
 package com.mycompany.app.productms;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Info;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -10,7 +12,7 @@ import org.springframework.context.ApplicationContext;
  * 2) @ComponentScan
  * 3)@EnableAutoConfiguration
  */
-
+@OpenAPIDefinition(info=@Info(title="product management system",version = "1"))
 @SpringBootApplication
 public class ProductmsApplication {
 
