@@ -1,0 +1,6 @@
+projectKey=com.mycompany.app:javaconfig
+serverUrl=http://localhost:9000
+serverVersion=9.2.0.49834
+dashboardUrl=http://localhost:9000/dashboard?id=com.mycompany.app%3Ajavaconfig
+ceTaskId=AX1W-4DGekNZEYp5BnCv
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AX1W-4DGekNZEYp5BnCv
