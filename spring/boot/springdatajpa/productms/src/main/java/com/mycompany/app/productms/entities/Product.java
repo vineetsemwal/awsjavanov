@@ -1,5 +1,8 @@
 package com.mycompany.app.productms.entities;
 
+
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -10,6 +13,7 @@ public class Product {
     @GeneratedValue
     @Id
     private Long id;
+
 
     @Column(unique=true)
     private String name;
