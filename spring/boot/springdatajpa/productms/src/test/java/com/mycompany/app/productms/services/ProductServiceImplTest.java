@@ -74,6 +74,7 @@ public class ProductServiceImplTest {
         assertEquals(price,result.getPrice());
         assertEquals(productId,result.getId());
 
+
     }
 
     /**

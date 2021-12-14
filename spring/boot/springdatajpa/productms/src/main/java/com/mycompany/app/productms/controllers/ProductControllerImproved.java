@@ -31,7 +31,7 @@ public class ProductControllerImproved {
      /products/byid/5
     */
    // @RequestMapping(path = "/byid/{id}",method=RequestMethod.GET)
-    @GetMapping("/byid/{id}")
+    @GetMapping(value = "/byid/{id}")
     public ProductDetails getProductById(@PathVariable("id")long productId) {
         ProductDetails response = service.findProductDetailsById(productId);
          return response;
