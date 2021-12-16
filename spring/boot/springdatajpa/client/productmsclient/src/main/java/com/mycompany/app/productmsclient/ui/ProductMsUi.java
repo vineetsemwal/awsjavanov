@@ -8,7 +8,6 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
@@ -78,10 +77,6 @@ public class ProductMsUi {
 
         return response;
     }
-
-
-
-
 
     public void display(ProductResponseDetails details){
         System.out.println("product-"+details.getId()+"-"+details.getProductName()+"-"+details.getPrice());
