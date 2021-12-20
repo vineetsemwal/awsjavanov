@@ -31,7 +31,7 @@ public class ProductControllerImproved {
      /products/byid/5
     */
    // @RequestMapping(path = "/byid/{id}",method=RequestMethod.GET)
-    @ResponseStatus
+    @ResponseStatus(HttpStatus.CREATED)
     @GetMapping(value = "/byid/{id}")
     public ProductDetails getProductById(@PathVariable("id")long productId) {
         ProductDetails response = service.findProductDetailsById(productId);
@@ -42,7 +42,7 @@ public class ProductControllerImproved {
     @GetMapping("/byid2/{id}")
     public ResponseEntity<ProductDetails> getProductById2(@PathVariable("id")long productId) {
         ProductDetails products = service.findProductDetailsById(productId);
-        ResponseEntity<ProductDetails>response=new ResponseEntity<>(products,HttpStatus.OK);
+        ResponseEntity<ProductDetails>response=new ResponseEntity<>(products,HttpStatus.CREATED);
         return response;
     }
 
